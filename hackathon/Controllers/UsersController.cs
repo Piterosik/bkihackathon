@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using hackathon.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace hackathon.Controllers
@@ -8,6 +9,10 @@ namespace hackathon.Controllers
     public class UsersController : Controller
     {
         private readonly IUsersRepository _userRepository;
+
+        const string SessionKeyUsername = "_Username";
+        const string SessionKeyId = "_ID";
+        const string SessionKeyCloths = "_Cloths";
 
         public UsersController(IUsersRepository userRepository)
         {
@@ -24,6 +29,9 @@ namespace hackathon.Controllers
         public IActionResult Login([FromBody] User user)
         {
             if (_userRepository.Login(user.Username, user.Seed)) {
+                HttpContext.Session.SetString(SessionKeyUsername, user.Username);
+                HttpContext.Session.SetInt32(SessionKeyId, user.Id);
+                HttpContext.Session.Set<IEnumerable<Cloth>>(SessionKeyCloths, GetCloths(user.Id));
                 return Ok();
             }
             return BadRequest();
@@ -39,7 +47,7 @@ namespace hackathon.Controllers
         }
 
         [HttpGet("{items}")]
-        public IEnumerable<Cloth> GetCloths(long userid)
+        public IEnumerable<Cloth> GetCloths(int userid)
         {
             return _userRepository.GetCloths(userid);
         }

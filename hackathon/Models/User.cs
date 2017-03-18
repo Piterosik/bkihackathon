@@ -7,7 +7,7 @@ namespace hackathon.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         public string Username { get; set; }
         public string Seed { get; set; }
