@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using hackathon.Controllers;
-using hackathon.Models;
+﻿using hackathon.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
 
 namespace hackathon
 {
@@ -35,6 +28,7 @@ namespace hackathon
             services.AddMvc();
 
             services.AddSingleton<IClothsRepository, ClothsRepository>();
+            services.AddSingleton<IUsersRepository, UsersRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

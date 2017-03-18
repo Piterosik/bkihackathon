@@ -10636,10 +10636,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\robert\\documents\\visual studio 2017\\Projects\\hackathon\\hackathon\\hackathon.csproj",
+      "projectUniqueName": "C:\\Users\\robert\\documents\\visual studio 2017\\Projects\\hackathon\\hackathon\\hackathon.csproj",
       "projectName": "hackathon",
-      "projectPath": "c:\\users\\robert\\documents\\visual studio 2017\\Projects\\hackathon\\hackathon\\hackathon.csproj",
-      "outputPath": "c:\\users\\robert\\documents\\visual studio 2017\\Projects\\hackathon\\hackathon\\obj\\",
+      "projectPath": "C:\\Users\\robert\\documents\\visual studio 2017\\Projects\\hackathon\\hackathon\\hackathon.csproj",
+      "outputPath": "C:\\Users\\robert\\documents\\visual studio 2017\\Projects\\hackathon\\hackathon\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

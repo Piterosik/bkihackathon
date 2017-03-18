@@ -6,7 +6,7 @@ namespace hackathon.Models
     {
         public WasherDb(DbContextOptions options) : base(options) {}
         public DbSet<Cloth> Cloths { get; set; }
-        public DbSet<User.User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public WasherDb() {}
 

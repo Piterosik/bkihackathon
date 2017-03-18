@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace hackathon.Migrations
 {
-    public partial class DatabaseMigration : Migration
+    public partial class UsersClothsDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,8 @@ namespace hackathon.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
-                    Type = table.Column<string>(nullable: true)
+                    Type = table.Column<string>(nullable: true),
+                    UserId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {

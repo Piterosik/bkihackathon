@@ -19,5 +19,11 @@ namespace hackathon.Controllers
         {
             return _clothsRepository.Get();
         }
+
+        [HttpPost("{add}")]
+        public void AddItem([FromBody] Cloth cloth)
+        {
+            _clothsRepository.Add(cloth);
+        }
     }
 }

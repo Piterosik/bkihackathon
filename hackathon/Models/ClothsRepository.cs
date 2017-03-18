@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using hackathon.Models;
 
-namespace hackathon.Controllers
+namespace hackathon.Models
 {
     public class ClothsRepository : IClothsRepository
     {
@@ -11,7 +11,6 @@ namespace hackathon.Controllers
         public ClothsRepository(WasherDb context)
         {
             _context = context;
-            Add(new Cloth {Name = "black shirt", Type = "shirt"});
         }
 
         public IEnumerable<Cloth> Get()

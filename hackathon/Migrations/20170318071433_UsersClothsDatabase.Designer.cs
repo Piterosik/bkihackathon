@@ -8,8 +8,8 @@ using hackathon.Models;
 namespace hackathon.Migrations
 {
     [DbContext(typeof(WasherDb))]
-    [Migration("20170318043612_DatabaseMigration")]
-    partial class DatabaseMigration
+    [Migration("20170318071433_UsersClothsDatabase")]
+    partial class UsersClothsDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,12 +25,14 @@ namespace hackathon.Migrations
 
                     b.Property<string>("Type");
 
+                    b.Property<long>("UserId");
+
                     b.HasKey("Id");
 
                     b.ToTable("Cloths");
                 });
 
-            modelBuilder.Entity("hackathon.Models.User.User", b =>
+            modelBuilder.Entity("hackathon.Models.User", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
